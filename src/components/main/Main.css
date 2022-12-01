@@ -1,0 +1,17 @@
+main {
+  background-color: var(--clr-bg-a);
+  color: var(--clr-text-a);
+
+  width: min(980px, 90vw);
+  margin: 2em auto 2em auto;
+
+  border-style: ridge;
+  border-color: var(--clr-text-a);
+  border-width: 3px;
+
+  box-shadow: 0.5em 0.5em 0.5em var(--clr-text-a);
+
+  z-index: 0;
+
+  height: 200vh;
+}

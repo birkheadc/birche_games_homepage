@@ -1,0 +1,10 @@
+html {
+  background-color: var(--clr-bg-c);
+  -webkit-tap-highlight-color:transparent
+}
+
+@media (max-width: 980px) {
+  html {
+    font-size: 1.5rem;
+  }
+}

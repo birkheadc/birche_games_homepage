@@ -1,0 +1,22 @@
+nav {
+  background-color: var(--clr-bg-b);
+  top: 0;
+  width: 100%;
+  padding: 1em;
+
+  border-style: solid;
+  border-width: 0 0 3px 0;
+  border-color: var(--clr-text-a);
+
+  box-shadow: 0 0.5em 0.5em var(--clr-text-a);
+
+  z-index: 1;
+}
+
+nav>ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  font-size: 1.5rem;
+}
