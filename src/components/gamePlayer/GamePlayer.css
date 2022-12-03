@@ -1,0 +1,17 @@
+div#game-wrapper {
+  position: relative;
+  border: solid 16px black;
+  width: 800px;
+  height: 600px;
+  box-sizing: content-box;
+  margin: 100px auto;
+}
+
+div#game {
+  width: 800px;
+  height: 600px;
+}
+
+div.hide canvas {
+  opacity: 0;
+}

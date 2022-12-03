@@ -1,0 +1,13 @@
+div.loading-curtain {
+  background-color: var(--clr-text-a);
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.loading-curtain>span {
+  color: var(--clr-bg-a);
+}
