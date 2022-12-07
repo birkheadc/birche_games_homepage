@@ -1,15 +1,14 @@
 div#game-wrapper {
   position: relative;
   border: solid 16px black;
-  width: 800px;
-  height: 600px;
+  width: var(--player-width);
+  height: var(--player-height);
   box-sizing: content-box;
-  margin: 100px auto;
 }
 
 div#game {
-  width: 800px;
-  height: 600px;
+  width: var(--player-width);
+  height: var(--player-height);
 }
 
 div.hide canvas {

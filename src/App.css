@@ -3,6 +3,28 @@ html {
   -webkit-tap-highlight-color:transparent
 }
 
+div#body-wrapper {
+  height: 100vh;
+}
+
+div#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
 @media (max-width: 980px) {
   html {
     font-size: 1.5rem;

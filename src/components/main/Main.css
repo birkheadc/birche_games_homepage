@@ -13,5 +13,7 @@ main {
 
   z-index: 0;
 
-  height: 200vh;
+  display: flex;
+  flex-direction: column;
+
 }

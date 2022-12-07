@@ -1,0 +1,14 @@
+div#player-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+  gap: 1em; 
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+div#player-main-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+}

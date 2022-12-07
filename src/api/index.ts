@@ -1,5 +1,7 @@
-import fetchGameScript from "./fetchGameScript";
+import loadGameScript from "./loadGameScript";
+import fetchGameScriptURL from "./fetchGameScript";
 
 export default {
-  fetchGameScript
+  loadGameScript,
+  fetchGameScriptURL
 }
