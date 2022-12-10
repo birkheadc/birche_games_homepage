@@ -12,7 +12,7 @@ function Play(props: IPlayProps): JSX.Element {
   const game: IGame = {
     url: '',
     type: '',
-    aspectRatio: 1.3333
+    aspectRatio: 1.5
   }
 
   return (
