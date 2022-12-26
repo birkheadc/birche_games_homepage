@@ -12,3 +12,7 @@ div#player-main-wrapper h1 {
   font-size: 2em;
   text-align: center;
 }
+
+p.player-description {
+  padding: 0 1em;
+}
