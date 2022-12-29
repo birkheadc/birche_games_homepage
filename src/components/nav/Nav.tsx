@@ -11,8 +11,7 @@ function Nav(props: INavProps): JSX.Element {
     <nav>
       <ul>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/browse?platform=browser'>Browser Games</NavLink></li>
-        <li><NavLink to='/browse?platform=desktop'>Desktop Games</NavLink></li>
+        <li><NavLink to='/browse'>Browse Games</NavLink></li>
         <li><NavLink to='/about'>About</NavLink></li>
       </ul>
     </nav>

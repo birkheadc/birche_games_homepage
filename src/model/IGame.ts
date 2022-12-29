@@ -1,5 +1,8 @@
+import { IGameProfile } from "./IGameProfile";
+
 export default interface IGame {
-  url: string,
-  type: string,
-  aspectRatio: number
+  id: string,
+  viewportRatio: number,
+  distName: string,
+  profile: IGameProfile
 }

@@ -1,0 +1,29 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+div.loading-circle, div.loading-circle-dark {
+  width: 10vw;
+  height: 10vw;
+  margin: auto;
+  border-style:dashed;
+  border-radius: 50%;
+  border-width: 10px 3px 3px 3px;
+  animation-name: spin;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+div.loading-circle {
+  border-color: var(--clr-bg-a);
+}
+
+div.loading-circle-dark {
+  border-color: var(--clr-bg-b);
+}

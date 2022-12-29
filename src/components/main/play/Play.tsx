@@ -1,6 +1,9 @@
 import * as React from 'react';
+import { useLocation } from 'react-router-dom';
+import fetchGame from '../../../api/fetchGame';
 import IGame from '../../../model/IGame';
 import GamePlayer from '../../gamePlayer/GamePlayer';
+import LoadingCurtain from '../../gamePlayer/loadingCurtain/LoadingCurtain';
 import './Play.css'
 
 interface IPlayProps {
@@ -9,22 +12,43 @@ interface IPlayProps {
 
 function Play(props: IPlayProps): JSX.Element {
 
-  const game: IGame = {
-    url: '',
-    type: '',
-    aspectRatio: 1.5
+  const [game, setGame] = React.useState<IGame | null>(null);
+
+  const location = useLocation();
+
+  React.useEffect(() => {
+    async function getGame() {
+      const id = new URLSearchParams(location.search).get('id');
+      if (id == null) return;
+      let game = await fetchGame(id);
+      if (game == null) return;
+      setGame(game);
+    }
+    getGame();
+  }, [])
+
+  function getContent(): JSX.Element {
+    if (game == null) {
+      return (
+        <div className='loading-circle-dark'>
+      
+        </div>
+      );
+    }
+    return (
+      <>
+        <h1>{game.profile.title}</h1>
+        <GamePlayer game={game}/>
+        <p className='player-description'>{game.profile.description}</p>
+      </>
+    );
   }
+
+  
 
   return (
     <div id='player-main-wrapper'>
-      {/* TODO: Make title dynamic */}
-      <h1>DEJAVU</h1>
-      <GamePlayer game={game}/>
-      <p className='player-description'>Dejavu was created in 1 month for Game Devcember 2022. It is the first game I have published.
-        Some sections turned out much more difficult than I intended, and the story evolved into something much darker than I anticipated.
-        All the same, it was fun to create, and I hope you had fun playing it is well.
-        Thank you for playing.
-      </p>
+      {getContent()}
     </div>
   );
 }

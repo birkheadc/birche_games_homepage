@@ -1,0 +1,20 @@
+div.game-browser-page-wrapper {
+  padding: 1em;
+}
+
+div.game-browser-page-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+div.game-browser-cards-wrapper {
+  margin: 0 auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, max-content));
+  grid-gap: 1em;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+

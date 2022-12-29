@@ -18,7 +18,7 @@ function GamePlayer(props: IGamePlayerProps): JSX.Element {
       const width = wrapperWidth * 0.8;
       return {
         width: width,
-        height: width / props.game.aspectRatio
+        height: width / props.game.viewportRatio
       }
     }
     
@@ -26,7 +26,7 @@ function GamePlayer(props: IGamePlayerProps): JSX.Element {
     document.documentElement.style.setProperty('--player-width', playerSize.width.toString() + 'px');
     document.documentElement.style.setProperty('--player-height', playerSize.height.toString() + 'px');
 
-    api.loadGameScript('dejavu', () => {
+    api.loadGame(props.game.distName, () => {
       setLoading(false);
     });
   }, []);

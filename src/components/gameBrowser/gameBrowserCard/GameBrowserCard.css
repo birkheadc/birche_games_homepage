@@ -1,0 +1,48 @@
+div.game-browser-card-wrapper {
+  width: 10em;
+  height: 12em;
+}
+
+div.game-browser-card-wrapper-inner {
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--clr-text-a);
+  box-shadow: 0.2em 0.2em 0.5em var(--clr-text-a);
+
+  padding: 1em;
+
+  width: 10em;
+  height: 12em;
+
+  background-color: var(--clr-bg-a);
+
+  transition: transform 0.1s, width 0.1s, height 0.1s;
+  overflow: hidden;
+}
+
+div.game-browser-card-wrapper h2 {
+  font-size: 1.8em;
+  text-align: center;
+}
+
+div.game-browser-card-wrapper-inner:hover {
+  cursor: pointer;
+
+  width: 18em;
+  height: 30em;
+
+  transform: scale(1) translate(-4em, -3em);
+
+  transition: transform 0.3s, width 0.3s, height 0.3s;
+  z-index: 1;
+}
+
+p.game-browser-description {
+  opacity: 0;
+  text-align: left;
+}
+
+div.game-browser-card-wrapper-inner:hover p.game-browser-description {
+  opacity: 1;
+  transition: opacity 0.8s 0.3s;
+}
