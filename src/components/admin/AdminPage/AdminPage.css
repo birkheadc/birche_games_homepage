@@ -1,0 +1,14 @@
+div.admin-page-wrapper {
+  padding: 1em;
+}
+
+div.admin-page-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+div.admin-page-wrapper button {
+  border: 1px solid black;
+  width: fit-content;
+}

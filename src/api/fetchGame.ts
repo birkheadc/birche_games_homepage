@@ -9,7 +9,7 @@ export default async function fetchGame(id: string): Promise<IGame | null> {
       url,
       { method: 'GET' }
     );
-    if (response.status != 200) {
+    if (response.status !== 200) {
       console.log('Failed to fetch game. Received code: ', response.status);
       return null;
     }
