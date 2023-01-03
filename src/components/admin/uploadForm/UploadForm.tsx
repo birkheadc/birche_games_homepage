@@ -24,12 +24,13 @@ function UploadForm(props: IUploadFormProps): JSX.Element {
     setGame(values => ({...values, [e.target.name]: e.target.value}))
   }
 
-  const upload = () => {
+  const upload = (e: React.FormEvent<HTMLElement>) => {
     async function upload() {
       setWorking(true);
       await api.uploadGame(game);
       setWorking(false);
     }
+    e.preventDefault();
     upload();
   }
 
@@ -40,7 +41,7 @@ function UploadForm(props: IUploadFormProps): JSX.Element {
       );
     }
     return (
-      <form className='upload-form'>
+      <form className='upload-form' onSubmit={upload}>
         <label htmlFor='game-name-input'>Name:</label>
         <input id='game-name-input' name='title' onChange={updateGame} type='text'></input>
         <label htmlFor='game-description-input'>Description:</label>
@@ -51,7 +52,7 @@ function UploadForm(props: IUploadFormProps): JSX.Element {
         <input id='game-dist-input' name='dist' onChange={updateGame} type='file'></input>
         <label htmlFor='game-dist-input'>Cover Image:</label>
         <input id='game-cover-image-input' name='coverImage' onChange={updateGame} type='file'></input>
-        <button onClick={upload} type='button'>UPLOAD</button>
+        <button type='submit' >UPLOAD</button>
       </form>
     );
   }

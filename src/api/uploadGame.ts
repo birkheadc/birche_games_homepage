@@ -5,23 +5,40 @@ import { INewGame } from "../model/INewGame";
 export default async function uploadGame(game: INewGame) {
   const url = env.API_URL + '/api/games';
   console.log("Attempting to upload game at url: " + url);
+  let formData = new FormData();
+  Object.keys(game).forEach(function (key) {
+    formData.append(key, game[key as keyof typeof game]);
+  })
+  console.log('Form Data: ', formData);
   try {
     let response: void | Response = await fetch(
       url,
       {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(game)
+        body: formData
       }
     )
-    .then(response => response.json())
-    .then(data => console.log(data));
-    if (response?.status !== 200) {
-      console.log("Failed to post game.");
+    if (response.status !== 200) {
+      console.log("Failed to upload game, error code: ", response.status);
+      return;
     }
-    console.log("Game uploaded successfully: ");
+    response.json().then(data => console.log(data));
+    // .then(
+    //   response =>
+    //   {
+    //     if (response.status !== 200) {
+    //       console.log("Failed to upload game, error code: ", response.status);
+    //       return;
+    //     }
+    //     response.json();
+    //   }
+    // )
+    // .then(
+    //   data =>
+    //   {
+    //     console.log("Game uploaded successfully.", data);
+    //   }
+    // );
   }
   catch {
     console.log("Failed to upload game, could not connect to server.");
