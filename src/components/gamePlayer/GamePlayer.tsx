@@ -26,7 +26,7 @@ function GamePlayer(props: IGamePlayerProps): JSX.Element {
     document.documentElement.style.setProperty('--player-width', playerSize.width.toString() + 'px');
     document.documentElement.style.setProperty('--player-height', playerSize.height.toString() + 'px');
 
-    api.loadGame(props.game.distName, () => {
+    api.loadGame(props.game.id, () => {
       setLoading(false);
     });
   }, []);

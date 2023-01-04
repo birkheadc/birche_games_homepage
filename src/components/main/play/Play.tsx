@@ -4,6 +4,8 @@ import fetchGame from '../../../api/fetchGame';
 import IGame from '../../../model/IGame';
 import GamePlayer from '../../gamePlayer/GamePlayer';
 import LoadingCurtain from '../../gamePlayer/loadingCurtain/LoadingCurtain';
+import LoadingWidget from '../../loadingPage/LoadingWidget';
+import NotFound from '../../notFound/NotFound';
 import './Play.css'
 
 interface IPlayProps {
@@ -21,7 +23,6 @@ function Play(props: IPlayProps): JSX.Element {
       const id = new URLSearchParams(location.search).get('id');
       if (id == null) return;
       let game = await fetchGame(id);
-      if (game == null) return;
       setGame(game);
     }
     getGame();
@@ -30,9 +31,7 @@ function Play(props: IPlayProps): JSX.Element {
   function getContent(): JSX.Element {
     if (game == null) {
       return (
-        <div className='loading-circle-dark'>
-      
-        </div>
+        <NotFound />
       );
     }
     return (

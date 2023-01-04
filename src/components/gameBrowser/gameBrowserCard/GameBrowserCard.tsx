@@ -20,7 +20,7 @@ function GameBrowserCard(props: IGameBrowserCardProps): JSX.Element {
     <div className='game-browser-card-wrapper'>
       <div className='game-browser-card-wrapper-inner' onClick={openPlayer}>
         <h2>{props.game.title}</h2>
-        <img src={env.API_URL + '/static/images/' + props.game.id}></img>
+        <img src={env.API_URL + '/static/covers/' + props.game.id + '.png'}></img>
         <p className='game-browser-description'>{props.game.description}</p>
       </div>
     </div>

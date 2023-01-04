@@ -1,11 +1,13 @@
 import { env } from "../env/env";
 
-export default async function loadGame(distName: string, callback: ((this: GlobalEventHandlers, ev: Event) => any)) {
-  console.log('Fetching game...');
+export default async function loadGame(distName: string, callback: (status: string) => any) {
+  console.log('Fetching game script...');
   const script = document.createElement("script");
   script.type = 'text/javascript';
   script.src = env.API_URL + '/static/dists/' + distName + '/index.js';
   console.log(script);
   document.body.appendChild(script);
-  script.onload = callback;
+  const status = script == null ? 'notFound' : 'good';
+  console.log('SCRIPT: ', script);
+  script.onload = () => callback(status);
 }
