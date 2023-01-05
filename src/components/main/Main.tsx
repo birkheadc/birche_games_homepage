@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { IGameProfile } from '../../api/fetchGameProfiles';
-import AdminPage from '../admin/AdminPage/AdminPage';
+import { IGameProfile } from '../../model/IGameProfile';
+import AdminPage from '../admin/adminPage/AdminPage';
 import GameBrowser from '../gameBrowser/GameBrowser';
 import About from './about/About';
 import './Main.css'
