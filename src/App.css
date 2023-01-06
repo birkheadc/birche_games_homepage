@@ -1,4 +1,5 @@
 html {
+  font-family: var(--font-p);
   background-color: var(--clr-bg-c);
   -webkit-tap-highlight-color:transparent
 }

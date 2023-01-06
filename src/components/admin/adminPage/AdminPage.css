@@ -6,9 +6,25 @@ div.admin-page-wrapper form {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  max-width: 20em;
+}
+
+div.admin-form-row-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 div.admin-page-wrapper button {
   border: 1px solid black;
   width: fit-content;
+}
+
+div.admin-page-wrapper form input {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--clr-text-a);
+}
+
+p.admin-form-message {
+  color: red;
 }

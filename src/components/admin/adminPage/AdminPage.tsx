@@ -9,7 +9,7 @@ interface IAdminPageProps {
 
 function AdminPage(props: IAdminPageProps): JSX.Element {
 
-  const [isLoggedIn, setLoggedIn] = React.useState<boolean>();
+  const [isLoggedIn, setLoggedIn] = React.useState<boolean>(false);
 
   function getContents(): JSX.Element {
     if (isLoggedIn === true) {
@@ -25,7 +25,7 @@ function AdminPage(props: IAdminPageProps): JSX.Element {
   return (
     <div className='admin-page-wrapper'>
       <h1>ADMIN</h1>
-      <UploadForm />
+      {getContents()}
     </div>
   );
 }

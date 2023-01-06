@@ -20,23 +20,6 @@ export default async function uploadFile(file: File) {
       console.log("Failed to upload file, error code: ", response.status);
       return;
     }
-    // response.json().then(data => console.log(data));
-    // .then(
-    //   response =>
-    //   {
-    //     if (response.status !== 200) {
-    //       console.log("Failed to upload game, error code: ", response.status);
-    //       return;
-    //     }
-    //     response.json();
-    //   }
-    // )
-    // .then(
-    //   data =>
-    //   {
-    //     console.log("Game uploaded successfully.", data);
-    //   }
-    // );
   }
   catch {
     console.log("Failed to upload file, could not connect to server.");
