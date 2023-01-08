@@ -1,0 +1,15 @@
+div.welcome-page-wrapper {
+  padding: 1em; 
+  flex-grow: 1;
+}
+
+div.welcome-page-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+div.welcome-page-wrapper p {
+  width: fit-content;
+  max-width: 30em;
+  margin: 0 auto;
+}

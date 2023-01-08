@@ -20,27 +20,11 @@ interface IAppProps {
 
 function App(props: IAppProps): JSX.Element {
 
-  const [isLoading, setLoading] = React.useState<boolean>(true);
-  const [games, setGames] = React.useState<IGameProfile[]>([]);
-
-  React.useEffect(() => {
-    async function loadGames(): Promise<void> {
-      const games = await api.fetchGameProfiles();
-      setGames(games);
-      setLoading(false);
-    }
-    loadGames();
-  }, []);
-
-  if (isLoading === true) {
-    return <LoadingPage />
-  }
-
   return (
     <BrowserRouter>
       <Background />
       <Nav />
-      <Main games={games}/>
+      <Main />
       <Footer />
     </BrowserRouter>
   );

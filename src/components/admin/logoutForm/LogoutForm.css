@@ -1,0 +1,10 @@
+form.admin-logout-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+form.admin-logout-form button {
+  padding: 0.2em;
+}

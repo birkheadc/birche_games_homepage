@@ -1,8 +1,7 @@
-div.login-form-submit-button-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
+form.admin-login-form {
+  margin: 0 auto;
 }
-div.login-form-submit-button-wrapper button {
-  padding: 0.2em;
+
+form.admin-login-form h2 {
+  font-size: 1.5em;
 }

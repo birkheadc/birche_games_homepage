@@ -14,6 +14,7 @@ interface IPlayProps {
 
 function Play(props: IPlayProps): JSX.Element {
 
+  const [isLoading, setLoading] = React.useState<boolean>(true);
   const [game, setGame] = React.useState<IGame | null>(null);
 
   const location = useLocation();
@@ -24,11 +25,17 @@ function Play(props: IPlayProps): JSX.Element {
       if (id == null) return;
       let game = await fetchGame(id);
       setGame(game);
+      setLoading(false);
     }
     getGame();
   }, [])
 
   function getContent(): JSX.Element {
+    if (isLoading === true) {
+      return (
+        <LoadingWidget color={'var(--clr-bg-b)'}/>
+      );
+    }
     if (game == null) {
       return (
         <NotFound />

@@ -1,0 +1,19 @@
+div.about-page-wrapper {
+  padding: 1em;
+  flex-grow: 1;
+}
+
+div.about-page-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+div.about-page-content-wrapper {
+  width: fit-content;
+  max-width: 30em;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}

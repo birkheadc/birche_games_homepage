@@ -4,6 +4,14 @@ import uploadGame from "./uploadGame";
 import fetchGame from "./fetchGame";
 import uploadFile from "./uploadFile";
 import fetchSessionToken from "./fetchSessionToken";
+import validateSessionToken from "./validateSessionToken";
+import deleteGame from "./deleteGame";
+import getGameValidity from "./getGameValidity";
+
+export interface IApiResult {
+  message: string,
+  errorCode: number
+}
 
 export default {
   fetchGameProfiles,
@@ -11,5 +19,8 @@ export default {
   uploadGame,
   fetchGame,
   uploadFile,
-  fetchSessionToken
+  fetchSessionToken,
+  validateSessionToken,
+  deleteGame,
+  getGameValidity
 }

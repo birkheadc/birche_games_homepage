@@ -1,4 +1,5 @@
 div.game-browser-page-wrapper {
+  flex-grow: 1;
   padding: 1em;
 }
 

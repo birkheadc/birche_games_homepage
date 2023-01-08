@@ -9,7 +9,7 @@ import Play from './play/Play';
 import Welcome from './welcome/Welcome';
 
 interface IMainProps {
-  games: IGameProfile[]
+  
 }
 
 function Main(props: IMainProps): JSX.Element {
@@ -17,7 +17,7 @@ function Main(props: IMainProps): JSX.Element {
     <main>
       <Routes>
         <Route path='/play' element={<Play />} />
-        <Route path ='/browse' element={<GameBrowser games={props.games}/>} />
+        <Route path ='/browse' element={<GameBrowser />} />
         <Route path ='/about' element={<About />} />
         <Route path ='/admin' element={<AdminPage />} />
         <Route path='/' element={<Welcome />} />

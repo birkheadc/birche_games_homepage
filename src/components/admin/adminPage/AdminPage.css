@@ -1,30 +1,76 @@
 div.admin-page-wrapper {
+  flex-grow: 1;
   padding: 1em;
 }
 
-div.admin-page-wrapper form {
+div.admin-page-inner-wrapper {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+}
+
+div.admin-page-inner-wrapper div {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+div.admin-page-working-curtain {
+  pointer-events: none;
+}
+
+div.admin-page-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+form.admin-form {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  max-width: 20em;
+  max-width: fit-content;
 }
 
 div.admin-form-row-wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 div.admin-page-wrapper button {
   border: 1px solid black;
   width: fit-content;
+  padding: 0.2em 0.5em;
 }
 
-div.admin-page-wrapper form input {
+form.admin-form input, form.admin-form select {
   border-style: solid;
   border-width: 1px;
   border-color: var(--clr-text-a);
+  width: 20em;
 }
 
-p.admin-form-message {
-  color: red;
+form.admin-form select {
+  padding: 0.5em;
+}
+
+div.admin-form-row-wrapper label {
+  position: absolute;
+  background-color: var(--clr-bg-a);
+  left: 0.2em;
+  top: -0.7em;
+  padding: 0 0.2em;
+}
+
+div.admin-form-row-wrapper input.text-input {
+  padding: 0.5em;
+}
+
+div.admin-form-row-wrapper input.file-input {
+  padding: 0.8em;
+}
+
+div.submit-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
 }

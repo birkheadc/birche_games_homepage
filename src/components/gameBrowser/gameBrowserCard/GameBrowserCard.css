@@ -7,7 +7,6 @@ div.game-browser-card-wrapper-inner {
   border-style: solid;
   border-width: 3px;
   border-color: var(--clr-text-a);
-  box-shadow: 0.2em 0.2em 0.5em var(--clr-text-a);
 
   padding: 1em;
 
@@ -15,14 +14,24 @@ div.game-browser-card-wrapper-inner {
   height: 12em;
 
   background-color: var(--clr-bg-a);
+  box-shadow: 0.1em 0.1em 0.3em var(--clr-text-a);
 
   transition: transform 0.1s, width 0.1s, height 0.1s;
-  overflow: hidden;
+  text-overflow: ellipsis;
+  /* overflow: hidden; */
+}
+
+div.game-browser-card-title-wrapper {
+  height: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 div.game-browser-card-wrapper h2 {
-  font-size: 1.8em;
   text-align: center;
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 div.game-browser-card-wrapper-inner:hover {
@@ -33,7 +42,10 @@ div.game-browser-card-wrapper-inner:hover {
 
   transform: scale(1) translate(-4em, -3em);
 
-  transition: transform 0.3s, width 0.3s, height 0.3s;
+  box-shadow: 1em 1em 1em var(--clr-text-a);
+
+
+  transition: transform 0.3s, width 0.3s, height 0.3s, box-shadow 0.3s;
   z-index: 1;
 }
 

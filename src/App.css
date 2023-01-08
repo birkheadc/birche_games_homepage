@@ -26,6 +26,10 @@ a:hover {
   color: red;
 }
 
+strong {
+  color: var(--clr-bg-b);
+}
+
 @media (max-width: 980px) {
   html {
     font-size: 1.5rem;
