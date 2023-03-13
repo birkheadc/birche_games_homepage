@@ -6,11 +6,6 @@ div#game-wrapper {
   box-sizing: content-box;
 }
 
-div#game {
-  width: var(--player-width);
-  height: var(--player-height);
-}
-
 div.hide-canvas canvas {
   opacity: 0;
 }

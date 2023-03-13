@@ -5,7 +5,7 @@ ARG API_URL
 
 ENV PATH /app/node_modules/.bin:$PATH
 ENV REACT_APP_API_URL=${API_URL}
-
+  
 COPY package.json ./
 COPY package-lock.json ./
 

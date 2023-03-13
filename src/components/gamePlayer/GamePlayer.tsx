@@ -10,26 +10,49 @@ interface IGamePlayerProps {
 function GamePlayer(props: IGamePlayerProps): JSX.Element {
 
   const [loading, setLoading] = React.useState(true);
+  const [dimensions, setDimensions] = React.useState({width: 0, height: 0});
 
   React.useEffect(() => {
-    
-    function calculatePlayerSize(): { width: number, height: number } {
-      const wrapperWidth = document.querySelector('#player-main-wrapper')?.clientWidth || 600;
-      const width = wrapperWidth * 0.8;
-      return {
-        width: width,
-        height: width / props.game.viewportRatio
+    function handleResize() {
+      if (document.fullscreenElement != null) {
+        setDimensions({
+          width: document.fullscreenElement.clientWidth,
+          height: document.fullscreenElement.clientHeight
+        });
+      } else {
+        const wrapperWidth = document.querySelector('#player-main-wrapper')?.clientWidth || 600;
+        const width = wrapperWidth * 0.8;
+        setDimensions({
+          width: width,
+          height: width / props.game.viewportRatio
+        });
       }
     }
-    
-    const playerSize = calculatePlayerSize();
-    document.documentElement.style.setProperty('--player-width', playerSize.width.toString() + 'px');
-    document.documentElement.style.setProperty('--player-height', playerSize.height.toString() + 'px');
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  });
 
+  React.useEffect(() => {
+    document.documentElement.style.setProperty('--player-width', dimensions.width.toString() + 'px');
+    document.documentElement.style.setProperty('--player-height', dimensions.height.toString() + 'px');
+    console.log('full screen: ', document.fullscreenElement);
+  }, [dimensions])
+
+  React.useEffect(() => {
+  const wrapperWidth = document.querySelector('#player-main-wrapper')?.clientWidth || 600;
+    const width = wrapperWidth * 0.8;
+    setDimensions({
+      width: width,
+      height: width / props.game.viewportRatio
+    });
     api.loadGame(props.game.id, () => {
       setLoading(false);
     });
   }, []);
+
+
 
   return (
     <div id='game-wrapper' className={loading ? 'hide' : ''}>
