@@ -2,8 +2,8 @@ main {
   background-color: var(--clr-bg-a);
   color: var(--clr-text-a);
 
-  width: min(980px, 90vw);
-  margin: 2em auto 2em auto;
+  width: min(980px, 90%);
+  margin: 2em auto;
 
   border-style: ridge;
   border-color: var(--clr-text-a);

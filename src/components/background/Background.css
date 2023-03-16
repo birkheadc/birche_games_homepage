@@ -1,6 +1,0 @@
-div#background {
-  position: fixed;
-  inset: 0;
-  background-image: linear-gradient(var(--clr-bg-c), var(--clr-bg-c));
-  z-index: -1;
-}
