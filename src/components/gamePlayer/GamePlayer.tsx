@@ -37,7 +37,6 @@ function GamePlayer(props: IGamePlayerProps): JSX.Element {
   React.useEffect(() => {
     document.documentElement.style.setProperty('--player-width', dimensions.width.toString() + 'px');
     document.documentElement.style.setProperty('--player-height', dimensions.height.toString() + 'px');
-    console.log('full screen: ', document.fullscreenElement);
   }, [dimensions])
 
   React.useEffect(() => {

@@ -7,7 +7,6 @@ export default async function uploadFile(file: File) {
   let formData = new FormData();
   formData.append('file', file);
   
-  console.log('Form Data: ', formData);
   try {
     let response: void | Response = await fetch(
       url,
